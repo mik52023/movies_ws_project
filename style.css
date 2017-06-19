@@ -1,0 +1,17 @@
+.*{
+    margin:0;
+}
+
+header,nav,main,footer,aside,article,section,a{
+    display: block;
+}
+a{
+    margin:15px;
+}
+
+.post{
+    color:red; font-weight:bold;
+}
+.get{
+    color:green; font-weight:bold;
+}
