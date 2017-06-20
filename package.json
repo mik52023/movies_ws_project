@@ -1,5 +1,5 @@
 {
-  "name": "exercise-1",
+  "name": "movies-ws-project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mik52023/ex1.git"
+    "url": "git+https://github.com/mik52023/movies_ws_project.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mik52023/ex1/issues"
+    "url": "https://github.com/mik52023/movies_ws_project/issues"
   },
-  "homepage": "https://github.com/mik52023/ex1#readme"
+  "homepage": "https://github.com/mik52023/movies_ws_project#readme"
 }
