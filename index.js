@@ -37,7 +37,10 @@ var vod=new comedy();
        vod.Get_all_movies_by_band_and_location(req.query.band,req.query.location,res); 
         });
 
-
+   app.get('/', (req,res) => {
+        console.log(`${__dirname}`);
+        res.sendFile(`${__dirname}/index.html`);
+      });
 
 /*
       app.post('/getMovieData',(req,res)=>{
