@@ -9,6 +9,11 @@ var vod=new comedy();
       app.use(bodyParser.json());
       app.use(bodyParser.urlencoded({extended:true}));
       app.use(express.static(`${__dirname}`));
+
+       app.get('/', (req,res) => {
+        console.log(`${__dirname}`);
+        res.sendFile(`${__dirname}/index.html`);
+      });
 //get location from client and send the players movies
        app.get('/get_Movies_by_location',(req,res)=>{ 
        console.log(`${req.query.location}`); 
@@ -37,10 +42,7 @@ var vod=new comedy();
        vod.Get_all_movies_by_band_and_location(req.query.band,req.query.location,res); 
         });
 
-   app.get('/', (req,res) => {
-        console.log(`${__dirname}`);
-        res.sendFile(`${__dirname}/index.html`);
-      });
+
 
 /*
       app.post('/getMovieData',(req,res)=>{
