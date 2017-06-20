@@ -2,7 +2,7 @@ var mongoose = require('mongoose'),
     consts=require('./data/const.js');  
 var Movie=require('./movieB.js');
 
-module.exports= class comedy_vod
+module.exports= class Punk_Videos
 {
 
 // recieves location and destination response 
@@ -30,6 +30,108 @@ res.status(200).json(shows);
 });
 });
 }
+// recieves username and destination response 
+// and sends json with all movies related to that user
+Get_all_movies_by_user(user,res){
+
+var shows=[];
+
+mongoose.connect(consts.mlab_key);
+var conn = mongoose.connection;//get default connection
+conn.on('error',
+(err) => {
+console.log(`connection error: ${err}`);
+});
+conn.once('open',
+() => {
+Movie.find({user:`${user}`},(err,user)=>{
+    if(err) console.log(`query error:${err}`);
+mongoose.disconnect();
+for(let i in user){
+
+    shows[i]=user[i];
+        }
+res.status(200).json(shows); 
+});
+});
+}
+
+// recieves band and destination response 
+// and sends json with all movies related to that user
+Get_all_movies_by_band(band,res){
+
+var shows=[];
+
+mongoose.connect(consts.mlab_key);
+var conn = mongoose.connection;//get default connection
+conn.on('error',
+(err) => {
+console.log(`connection error: ${err}`);
+});
+conn.once('open',
+() => {
+Movie.find({band:`${band}`},(err,user)=>{
+    if(err) console.log(`query error:${err}`);
+mongoose.disconnect();
+for(let i in user){
+
+    shows[i]=user[i];
+        }
+res.status(200).json(shows); 
+});
+});
+}
+// recieves username,location and destination response 
+// and sends json with all movies related to that user
+Get_all_movies_by_user_and_location(user,location,res){
+
+var shows=[];
+
+mongoose.connect(consts.mlab_key);
+var conn = mongoose.connection;//get default connection
+conn.on('error',
+(err) => {
+console.log(`connection error: ${err}`);
+});
+conn.once('open',
+() => {
+Movie.find({user:`${user}`,location:`${location}`},(err,user)=>{
+    if(err) console.log(`query error:${err}`);
+mongoose.disconnect();
+for(let i in user){
+
+    shows[i]=user[i];
+        }
+res.status(200).json(shows); 
+});
+});
+}
+// recieves band name,location and destination response 
+// and sends json with all movies related to that user
+Get_all_movies_by_band_and_location(band,location,res){
+
+var shows=[];
+
+mongoose.connect(consts.mlab_key);
+var conn = mongoose.connection;//get default connection
+conn.on('error',
+(err) => {
+console.log(`connection error: ${err}`);
+});
+conn.once('open',
+() => {
+Movie.find({band:`${band}`,location:`${location}`},(err,user)=>{
+    if(err) console.log(`query error:${err}`);
+mongoose.disconnect();
+for(let i in user){
+
+    shows[i]=user[i];
+        }
+res.status(200).json(shows); 
+});
+});
+}
+
 /*
 Get_movies_by_id(id){
 

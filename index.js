@@ -10,10 +10,34 @@ var vod=new comedy();
       app.use(bodyParser.urlencoded({extended:true}));
       app.use(express.static(`${__dirname}`));
 //get location from client and send the players movies
-       app.get('/getAllMovies',(req,res)=>{ 
+       app.get('/get_Movies_by_location',(req,res)=>{ 
        console.log(`${req.query.location}`); 
        vod.Get_all_movies_by_location(req.query.location,res); 
         });
+//get user name from client and send the players movies
+       app.get('/get_Movies_by_user',(req,res)=>{ 
+       console.log(`${req.query.user}`); 
+       vod.Get_all_movies_by_user(req.query.user,res); 
+        });
+//get band from client and send the players movies
+       app.get('/get_Movies_by_band',(req,res)=>{ 
+       console.log(`${req.query.band}`); 
+       vod.Get_all_movies_by_band(req.query.band,res); 
+        });       
+//get user name and location from client and send the players movies     
+  app.get('/get_Movies_by_user_and_location',(req,res)=>{ 
+       console.log(`${req.query.user}`); 
+       console.log(`${req.query.location}`);
+       vod.Get_all_movies_by_user_and_location(req.query.user,req.query.location,res); 
+        });
+//get band and location from client and send the players movies     
+  app.get('/get_Movies_by_band_and_location',(req,res)=>{ 
+       console.log(`${req.query.band}`); 
+       console.log(`${req.query.location}`);
+       vod.Get_all_movies_by_band_and_location(req.query.band,req.query.location,res); 
+        });
+
+
 
 /*
       app.post('/getMovieData',(req,res)=>{
