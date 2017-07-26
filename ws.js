@@ -19,7 +19,7 @@ console.log(`connection error: ${err}`);
 });
 conn.once('open',
 () => {
-Movie.find({location:`${location}`},(err,user)=>{
+Movie.find({location:`${location}`}).find((err,user)=>{
     if(err) console.log(`query error:${err}`);
 mongoose.disconnect();
 for(let i in user){
@@ -44,7 +44,7 @@ console.log(`connection error: ${err}`);
 });
 conn.once('open',
 () => {
-Movie.find({user:`${user}`},(err,user)=>{
+Movie.find({user:`${user}`}).sort({upload_date: -1}).exec((err,user)=>{
     if(err) console.log(`query error:${err}`);
 mongoose.disconnect();
 for(let i in user){
