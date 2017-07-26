@@ -132,6 +132,36 @@ res.status(200).json(shows);
 });
 }
 
+addVideo(res,name,id,embedded,location,song,band,concert_name,concert_date){
+
+var datetime = new Date();
+
+
+
+var new_video=new Movie({id:id,name:name,embedded:embedded,location:location,song:song,band:band,concert_name:concert_name,concert_date:concert_date,number_of_views:0,upload_date:datetime.toDateString()});
+mongoose.connect(consts.mlab_key);
+var conn = mongoose.connection;
+
+conn.once('open',
+() => {
+new_video.save(
+(err)=>{
+    if(err) {
+        console.log(err);
+        res.status(400).json("fail");
+        mongoose.disconnect();
+     }
+    else{
+        console.log("success");
+           mongoose.disconnect();
+     res.status(200).json("success");
+    }
+    });
+    });
+}
+
+
+
 /*
 Get_movies_by_id(id){
 

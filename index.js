@@ -48,6 +48,12 @@ next();
        vod.Get_all_movies_by_band_and_location(req.query.band,req.query.location,res); 
         });
 
+   app.post('/add_Movie',(req,res)=>{ 
+       console.log(`${req.body.band}`); 
+       console.log(`${req.body.location}`);
+       vod.addVideo(res,req.body.name,req.body.id,req.body.embedded,req.body.location,req.body.song,req.body.band,req.body.concert_name,req.body.concert_date); 
+        });
+
 
 
 /*
