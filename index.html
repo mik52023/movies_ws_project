@@ -8,44 +8,77 @@
 <body>
 <h1>Punk-Movies API</h1>
 <h2>get_Movies_by_location(location)</h2>
-<a href="#">https://exercise-1.herokuapp.com/getAllMovies</a>
+<a href="https://movies-ws-project.herokuapp.com/get_Movies_by_location?location=Tel-Aviv">https://movies-ws-project.herokuapp.com/get_Movies_by_location</a>
 <p>
-this is a <span class="get">GET</span> route function.     
+this is a <span class="get">GET</span> route function     
 </p>
 <p>
 Returns a list of all the movies at the location.  
 </p>
+<p>
+example:
+</p>
+<img src="./images/videobylocation.JPG">
 <h2>get_Movies_by_user(user)</h2>
-<a href="#">https://exercise-1.herokuapp.com/getMovieData</a>
+<a href="https://movies-ws-project.herokuapp.com/get_Movies_by_user?user=avi">https://movies-ws-project.herokuapp.com/get_Movies_by_user</a>
 <p>
 this is a <span class="get">GET</span> route function.     
 </p>
 <p>
 Recieve a user name parameter,<br>Once found, returns movies info posted by that user 
 </p>
+<p>
+example:
+</p>
+<img src="./images/videobyuser.JPG">
 <h2>get_Movies_by_band(band)</h2>
-<a href="#">https://exercise-1.herokuapp.com/getMovieByYears</a>
+<a href="https://movies-ws-project.herokuapp.com/get_Movies_by_band?band=Korn">https://movies-ws-project.herokuapp.com/get_Movies_by_band</a>
 <p>
 this is a <span class="get">GET</span> route function.     
 </p>
 <p>
 Recieve a band name parameter,<br>Once found, returns movies info related to that band .   
 </p>
+<p>
+example:
+</p>
+<img src="./images/videobyband.JPG">
+
 <h2>get_Movies_by_user_and_location(user,location)</h2>
-<a href="#">https://exercise-1.herokuapp.com/getMovieByYears</a>
+<a href="https://movies-ws-project.herokuapp.com/get_Movies_by_user_and_location?user=avi&location=Tel-Aviv">https://movies-ws-project.herokuapp.com/get_Movies_by_user_and_location</a>
 <p>
 this is a <span class="get">GET</span> route function.     
 </p>
 <p>
 Recieve a user name and location parameters,<br>Once found, returns movies info posted by the user that were taken at the location.   
 </p>
+<p>
+example:
+</p>
+<img src="./images/videobyuserandlocation.JPG">
 <h2>get_Movies_by_band_and_location(band,location)</h2>
-<a href="#">https://exercise-1.herokuapp.com/getMovieByYears</a>
+<a href="https://movies-ws-project.herokuapp.com/get_Movies_by_band_and_location?band=Korn&location=London">https://movies-ws-project.herokuapp.com/get_Movies_by_band_and_location</a>
 <p>
 this is a <span class="get">GET</span> route function.     
 </p>
 <p>
 Recieve a band name and location parameters,<br>Once found, returns movies info that related to the band that were taken at the location.   
+</p>
+<p>
+example:
+</p>
+<img src="./images/videobybandandlocation.JPG">
+
+<h2>add_Movie(res,name,id,embedded,location,song,band,concert_name,concert_date,user)</h2>
+<a href="#">https://movies-ws-project.herokuapp.com/add_Movie</a>
+<form action="https://movies-ws-project.herokuapp.com/add_Movie" method="post">
+<button type="submit">press for example </button>
+</form>
+<p>
+this is a <span class="post">POST</span> route function.     
+</p>
+<p>
+Recieve these parameters and create a video in the db<br>if successfull returns success else return fail.   
 </p>
 
 </body>
