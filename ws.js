@@ -132,13 +132,13 @@ res.status(200).json(shows);
 });
 }
 
-addVideo(res,name,id,embedded,location,song,band,concert_name,concert_date){
+addVideo(res,name,id,embedded,location,song,band,concert_name,concert_date,user){
 
 var datetime = new Date();
 
 
 
-var new_video=new Movie({id:id,name:name,embedded:embedded,location:location,song:song,band:band,concert_name:concert_name,concert_date:concert_date,number_of_views:0,upload_date:datetime.toDateString()});
+var new_video=new Movie({id:id,name:name,embedded:embedded,location:location,song:song,band:band,concert_name:concert_name,concert_date:concert_date,number_of_views:0,upload_date:datetime.toDateString(),user:user});
 mongoose.connect(consts.mlab_key);
 var conn = mongoose.connection;
 
